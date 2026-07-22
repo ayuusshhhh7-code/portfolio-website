@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aayush Gupta — Portfolio</title>
+  <meta name="description" content="Aayush Gupta — Software Developer & Data Analyst. Personal Portfolio."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ░░ THREE.JS CANVAS ░░ -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- ░░ CURSOR ░░ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- ░░ LOADING SCREEN ░░ -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-text">AAYUSH GUPTA</div>
+      <div class="loader-percent" id="loader-percent">0%</div>
+      <div class="loader-line-wrap">
+        <div class="loader-line" id="loader-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ NAVIGATION ░░ -->
+  <nav id="navbar">
+    <div class="nav-wrap">
+      <a href="#home" class="nav-logo" id="logo-link">
+        Aayush <span>Gupta</span>
+      </a>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#home"       class="nav-a" data-s="home">Home</a></li>
+        <li><a href="#about"      class="nav-a" data-s="about">About</a></li>
+        <li><a href="#skills"     class="nav-a" data-s="skills">Skills</a></li>
+        <li><a href="#experience" class="nav-a" data-s="experience">Experience</a></li>
+        <li><a href="#projects"   class="nav-a" data-s="projects">Projects</a></li>
+        <li><a href="#education"  class="nav-a" data-s="education">Education</a></li>
+        <li><a href="#contact"    class="nav-a" data-s="contact">Contact</a></li>
+      </ul>
+      <button class="hbg" id="hbg" aria-label="Toggle Navigation Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#home" class="mobile-a">Home</a>
+      <a href="#about" class="mobile-a">About</a>
+      <a href="#skills" class="mobile-a">Skills</a>
+      <a href="#experience" class="mobile-a">Experience</a>
+      <a href="#projects" class="mobile-a">Projects</a>
+      <a href="#education" class="mobile-a">Education</a>
+      <a href="#contact" class="mobile-a">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <section id="home" class="hero-sec">
+    <div class="hero-grid">
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="badge-row fade-up">
+          <span class="badge-dot-live"></span>
+          <span class="badge-txt">Available for work</span>
+        </div>
+        <h1 class="hero-title fade-up delay-1">
+          Aayush <em>Gupta</em>
+        </h1>
+        <div class="hero-role-wrap fade-up delay-2">
+          <span class="role-label">Specializing in</span>
+          <span id="typewriter-text" class="role-text"></span>
+          <span class="role-cursor">|</span>
+        </div>
+        <p class="hero-para fade-up delay-3">
+          BCA Graduate (2025) · Software Developer · Data Analyst. Crafting efficient, data-driven software with Python, SQL, Power BI &amp; modern web technologies.
+        </p>
+        <div class="hero-btns fade-up delay-4">
+          <a href="#projects" class="btn-primary" id="hero-projects-btn">View Projects</a>
+          <a href="#contact" class="btn-secondary" id="hero-contact-btn">Let's Connect</a>
+        </div>
+        <div class="hero-stats-row fade-up delay-5">
+          <div class="hstat">
+            <div class="hstat-n">6</div>
+            <div class="hstat-l">Mos Exp</div>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <div class="hstat-n" data-count="2">0</div>
+            <div class="hstat-l">Projects</div>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <div class="hstat-n" data-count="10">0</div>
+            <div class="hstat-l">Tech Skills</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — Portrait Presentation -->
+      <div class="hero-right fade-up delay-2">
+        <div class="profile-card-container">
+          <div class="profile-card-editorial" id="profile-card-3d">
+            <div class="profile-img-wrap">
+              <img src="assets/profile.jpg" alt="Aayush Gupta Portrait" class="profile-img"/>
+            </div>
+            <div class="profile-caption">Aayush Gupta · Software &amp; Data</div>
+          </div>
+          <div class="profile-card-border"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll prompt -->
+    <div class="scroll-cue">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <section id="about" class="section about-sec">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="sec-tag">// About Me</span>
+        <h2 class="sec-h2">Who I <em>Am</em></h2>
+      </div>
+      <div class="about-grid">
+        <!-- Profile Frame -->
+        <div class="about-img-frame fade-up">
+          <div class="about-img-inner">
+            <img src="assets/profile.jpg" alt="Aayush Gupta" class="about-img"/>
+          </div>
+          <div class="about-card-info">
+            <span class="aci-name">Aayush Gupta</span>
+            <span class="aci-role">Software Developer &amp; Data Analyst</span>
+          </div>
+        </div>
+
+        <div class="about-text fade-up delay-2">
+          <p class="about-lead">
+            I'm a <span class="hl">Computer Applications graduate (2025)</span> with hands-on experience in software development and data analysis.
+          </p>
+          <p class="about-body">
+            Completed a <span class="hl">6-month Software Developer Internship</span>, contributing to testing, debugging, and improving application performance. Skilled in Python, SQL, Power BI, and web technologies — building efficient, data-driven solutions that matter.
+          </p>
+          <div class="about-tags">
+            <span class="atag">Software Dev</span>
+            <span class="atag">Data Analytics</span>
+            <span class="atag">Problem Solving</span>
+            <span class="atag">Python</span>
+            <span class="atag">Web Dev</span>
+          </div>
+          <div class="about-info">
+            <div class="ai-row"><span class="ai-k">Email</span><a href="mailto:ayushh.7229@gmail.com" class="ai-v">ayushh.7229@gmail.com</a></div>
+            <div class="ai-row"><span class="ai-k">Phone</span><span class="ai-v">+91 7229968803</span></div>
+            <div class="ai-row"><span class="ai-k">Degree</span><span class="ai-v">BCA — 2025</span></div>
+            <div class="ai-row"><span class="ai-k">Experience</span><span class="ai-v">6 Months Intern</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SKILLS ░░ -->
+  <section id="skills" class="section skills-sec">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="sec-tag">// Skills Inventory</span>
+        <h2 class="sec-h2">Technical <em>Stack</em></h2>
+      </div>
+
+      <!-- Clean Category-based Skill Showcase -->
+      <div class="skills-grid">
+        <!-- Languages & Core -->
+        <div class="skills-column fade-up">
+          <h3 class="skills-col-title">Languages &amp; Core</h3>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Python</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>SQL &amp; Database Design</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>HTML5 / CSS3 / JavaScript</span>
+              <span>78%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="78"></div></div>
+          </div>
+        </div>
+
+        <!-- Frameworks & Testing -->
+        <div class="skills-column fade-up delay-1">
+          <h3 class="skills-col-title">Frameworks &amp; Testing</h3>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>React JS</span>
+              <span>65%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Jest &amp; Unit Testing</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Node.js / Express</span>
+              <span>60%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="60"></div></div>
+          </div>
+        </div>
+
+        <!-- Analytics & Databases -->
+        <div class="skills-column fade-up delay-2">
+          <h3 class="skills-col-title">Analytics &amp; Tools</h3>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Power BI &amp; DAX</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>MySQL / MongoDB</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Git &amp; Version Control</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ EXPERIENCE ░░ -->
+  <section id="experience" class="section exp-sec">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="sec-tag">// Experience</span>
+        <h2 class="sec-h2">Work <em>History</em></h2>
+      </div>
+      
+      <div class="experience-wrap fade-up">
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-duration">Nov 2025 — Apr 2026</span>
+            <span class="exp-status">6 Months Completed</span>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title">Software Developer Intern</h3>
+            <h4 class="exp-company">Tech Organization</h4>
+            <p class="exp-desc">
+              Completed a 6-month software development internship, contributing to the development, unit testing, and maintenance of high-performance web applications. Worked closely with cross-functional teams to ensure quality benchmarks.
+            </p>
+            <ul class="exp-bullets">
+              <li>Wrote robust unit test suites using <strong>Jest</strong> to maximize test coverage and application reliability.</li>
+              <li>Collaborated on backend APIs, checked system performance, and debugged logs.</li>
+              <li>Participated in git-based source control workflows and reviews to align on release cycles.</li>
+              <li>Analyzed and documented program modules, interfaces, and testing strategies.</li>
+            </ul>
+            <div class="exp-tech">
+              <span>Jest</span><span>Git</span><span>APIs</span><span>Node.js</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROJECTS ░░ -->
+  <section id="projects" class="section proj-sec">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="sec-tag">// Projects</span>
+        <h2 class="sec-h2">Selected <em>Work</em></h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card fade-up">
+          <div class="project-header">
+            <span class="project-number">01</span>
+            <h3 class="project-title">Quiz Management System</h3>
+          </div>
+          <p class="project-description">A complete responsive quiz engine offering dynamic questions loading, scoring analysis, and visual results summaries.</p>
+          <ul class="project-bullets">
+            <li>Dynamic quiz questions and scoring logic</li>
+            <li>User-friendly navigation &amp; result tracking</li>
+            <li>Efficient question management structure</li>
+          </ul>
+          <div class="project-tags">
+            <span>JavaScript</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="project-link">
+              View Code <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card featured fade-up delay-2">
+          <div class="project-header">
+            <span class="project-number">02</span>
+            <span class="project-badge">Featured</span>
+            <h3 class="project-title">HR Analytics Dashboard</h3>
+          </div>
+          <p class="project-description">Interactive enterprise intelligence report tracking human resources metrics, employee retention curves, and operational KPIs.</p>
+          <ul class="project-bullets">
+            <li>Integrated multi-source data for unified analysis</li>
+            <li>Power Query data cleaning &amp; transformation</li>
+            <li>Dynamic KPI visualizations for decision-making</li>
+          </ul>
+          <div class="project-tags">
+            <span>Power BI</span>
+            <span>Power Query</span>
+            <span>DAX</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="project-link">
+              View Dashboard <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ EDUCATION ░░ -->
+  <section id="education" class="section edu-sec">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="sec-tag">// Qualifications</span>
+        <h2 class="sec-h2">Education &amp; <em>Certs</em></h2>
+      </div>
+      
+      <div class="edu-grid">
+        <!-- Education Timeline -->
+        <div class="edu-timeline fade-up">
+          <h3 class="edu-section-title">Education</h3>
+          
+          <div class="edu-item">
+            <span class="edu-year">2025</span>
+            <div class="edu-details">
+              <h4>Bachelor of Computer Applications</h4>
+              <span class="edu-school">Maharishi Arvind Institute Of Science And Management</span>
+              <span class="edu-grade">Aggregate: 78.10%</span>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <span class="edu-year">2021</span>
+            <div class="edu-details">
+              <h4>Class 12th (RBSE)</h4>
+              <span class="edu-school">N.K. Public School</span>
+              <span class="edu-grade">Percentage: 95.20%</span>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <span class="edu-year">2019</span>
+            <div class="edu-details">
+              <h4>Class 10th (RBSE)</h4>
+              <span class="edu-school">Red Rose English School</span>
+              <span class="edu-grade">Percentage: 82.00%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="certs-list fade-up delay-1">
+          <h3 class="edu-section-title">Certifications</h3>
+          
+          <div class="cert-item">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="cert-info">
+              <h4>SQL Internship</h4>
+              <span>Celebal Technologies</span>
+            </div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="cert-info">
+              <h4>AI and Data Skills</h4>
+              <span>YBI Foundation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CONTACT ░░ -->
+  <section id="contact" class="section contact-sec">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="sec-tag">// Connections</span>
+        <h2 class="sec-h2">Get In <em>Touch</em></h2>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <p class="contact-lead">Open to full-time roles, internships, freelance projects, and collaborations. Let's discuss how we can work together.</p>
+          <a href="mailto:ayushh.7229@gmail.com" class="contact-large-link" id="contact-email-3d">
+            <span class="cl-label">Write me an email</span>
+            <span class="cl-email">ayushh.7229@gmail.com</span>
+            <span class="cl-arrow">→</span>
+          </a>
+        </div>
+        <div class="contact-right fade-up delay-1">
+          <div class="contact-links-grid">
+            <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank" rel="noopener" class="contact-card" id="cc-linkedin">
+              <div class="cc-details">
+                <span class="cc-name">LinkedIn</span>
+                <span class="cc-handle">aayush-gupta</span>
+              </div>
+              <span class="cc-link-icon">↗</span>
+            </a>
+            
+            <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="contact-card" id="cc-github">
+              <div class="cc-details">
+                <span class="cc-name">GitHub</span>
+                <span class="cc-handle">ayuusshhhh7-code</span>
+              </div>
+              <span class="cc-link-icon">↗</span>
+            </a>
+            
+            <a href="mailto:ayushh.7229@gmail.com" class="contact-card" id="cc-email">
+              <div class="cc-details">
+                <span class="cc-name">Email</span>
+                <span class="cc-handle">ayushh.7229@gmail.com</span>
+              </div>
+              <span class="cc-link-icon">↗</span>
+            </a>
+            
+            <a href="tel:+917229968803" class="contact-card" id="cc-phone">
+              <div class="cc-details">
+                <span class="cc-name">Phone</span>
+                <span class="cc-handle">+91 7229968803</span>
+              </div>
+              <span class="cc-link-icon">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span>Aayush Gupta</span>
+      </div>
+      <p class="footer-copy">© <span id="yr"></span> · Crafted with care &amp; Three.js</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank">LinkedIn</a>
+        <a href="https://github.com/ayuusshhhh7-code" target="_blank">GitHub</a>
+        <a href="mailto:ayushh.7229@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- THREE.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
