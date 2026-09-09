@@ -1,8 +1,3 @@
-/* ═══════════════════════════════════════
-   SCRIPT.JS — Portfolio
-   Three.js Waves + Editorial Interactions
-   ═══════════════════════════════════════ */
-
 'use strict';
 
 // ─── Loader ───────────────────────────────────────
