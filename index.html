@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aayush Gupta — Portfolio</title>
-  <meta name="description" content="Aayush Gupta — Software Developer & Data Analyst. Personal Portfolio."/>
+  <title>Aayush Gupta — Luxury Glassmorphism Portfolio &amp; Dashboard</title>
+  <meta name="description" content="Aayush Gupta — Software Developer &amp; Data Analyst. Luxury Glassmorphism Interactive Portfolio &amp; Dashboard."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- ░░ THREE.JS CANVAS ░░ -->
+  <!-- Ambient Luxury Background Layers -->
+  <div class="bg-ambient-layer"></div>
+  <div class="bg-ambient-overlay"></div>
+
+  <!-- Three.js Ambient Floating Light Bokeh & Embers -->
   <canvas id="three-canvas"></canvas>
 
-  <!-- ░░ CURSOR ░░ -->
+  <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
 
-  <!-- ░░ LOADING SCREEN ░░ -->
+  <!-- Frosted Loading Screen -->
   <div class="loader" id="loader">
     <div class="loader-inner">
-      <div class="loader-text">AAYUSH GUPTA</div>
+      <div class="loader-text">Aayush Gupta</div>
       <div class="loader-percent" id="loader-percent">0%</div>
       <div class="loader-line-wrap">
         <div class="loader-line" id="loader-line"></div>
@@ -30,265 +34,571 @@
     </div>
   </div>
 
-  <!-- ░░ NAVIGATION ░░ -->
-  <nav id="navbar">
-    <div class="nav-wrap">
-      <a href="#home" class="nav-logo" id="logo-link">
-        Aayush <span>Gupta</span>
-      </a>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="#home"       class="nav-a" data-s="home">Home</a></li>
-        <li><a href="#about"      class="nav-a" data-s="about">About</a></li>
-        <li><a href="#skills"     class="nav-a" data-s="skills">Skills</a></li>
-        <li><a href="#experience" class="nav-a" data-s="experience">Experience</a></li>
-        <li><a href="#projects"   class="nav-a" data-s="projects">Projects</a></li>
-        <li><a href="#education"  class="nav-a" data-s="education">Education</a></li>
-        <li><a href="#contact"    class="nav-a" data-s="contact">Contact</a></li>
-      </ul>
-      <button class="hbg" id="hbg" aria-label="Toggle Navigation Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <a href="#home" class="mobile-a">Home</a>
-      <a href="#about" class="mobile-a">About</a>
-      <a href="#skills" class="mobile-a">Skills</a>
-      <a href="#experience" class="mobile-a">Experience</a>
-      <a href="#projects" class="mobile-a">Projects</a>
-      <a href="#education" class="mobile-a">Education</a>
-      <a href="#contact" class="mobile-a">Contact</a>
-    </div>
-  </nav>
+  <!-- ░░ FLOATING LEFT CAPSULE NAVIGATION DOCK (Matching Screenshot) ░░ -->
+  <aside class="floating-dock" id="floating-dock">
+    <!-- Active Orange Top Button with App Grid Icon -->
+    <a href="#home" class="dock-item dock-active-circle active" data-tooltip="Dashboard" id="dock-home">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <circle cx="5" cy="5" r="2.2"></circle><circle cx="12" cy="5" r="2.2"></circle><circle cx="19" cy="5" r="2.2"></circle>
+        <circle cx="5" cy="12" r="2.2"></circle><circle cx="12" cy="12" r="2.2"></circle><circle cx="19" cy="12" r="2.2"></circle>
+        <circle cx="5" cy="19" r="2.2"></circle><circle cx="12" cy="19" r="2.2"></circle><circle cx="19" cy="19" r="2.2"></circle>
+      </svg>
+    </a>
+    
+    <!-- User / About Icon -->
+    <a href="#about" class="dock-item" data-tooltip="About Me" id="dock-about">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+    </a>
 
-  <!-- ░░ HERO ░░ -->
-  <section id="home" class="hero-sec">
-    <div class="hero-grid">
-      <!-- Left -->
-      <div class="hero-left">
-        <div class="badge-row fade-up">
-          <span class="badge-dot-live"></span>
-          <span class="badge-txt">Available for work</span>
-        </div>
-        <h1 class="hero-title fade-up delay-1">
-          Aayush <em>Gupta</em>
-        </h1>
-        <div class="hero-role-wrap fade-up delay-2">
-          <span class="role-label">Specializing in</span>
-          <span id="typewriter-text" class="role-text"></span>
-          <span class="role-cursor">|</span>
-        </div>
-        <p class="hero-para fade-up delay-3">
-          MBA Student · Software Developer · Data Analyst. Crafting efficient, data-driven software with Python, SQL, Power BI &amp; modern web technologies.
-        </p>
-        <div class="hero-btns fade-up delay-4">
-          <a href="#projects" class="btn-primary" id="hero-projects-btn">View Projects</a>
-          <a href="#contact" class="btn-secondary" id="hero-contact-btn">Let's Connect</a>
-        </div>
-        <div class="hero-stats-row fade-up delay-5">
-          <div class="hstat">
-            <div class="hstat-n">6</div>
-            <div class="hstat-l">Mos Exp</div>
-          </div>
-          <div class="hstat-div"></div>
-          <div class="hstat">
-            <div class="hstat-n" data-count="2">0</div>
-            <div class="hstat-l">Projects</div>
-          </div>
-          <div class="hstat-div"></div>
-          <div class="hstat">
-            <div class="hstat-n" data-count="15">0</div>
-            <div class="hstat-l">Tech Skills</div>
-          </div>
-        </div>
-      </div>
+    <!-- Skills / Analytics Icon -->
+    <a href="#skills" class="dock-item" data-tooltip="Tech Stack" id="dock-skills">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+        <circle cx="16" cy="12" r="2"></circle>
+        <path d="M6 12h2"></path>
+      </svg>
+    </a>
 
-      <!-- Right — Portrait Presentation -->
-      <div class="hero-right fade-up delay-2">
-        <div class="profile-card-container">
-          <div class="profile-card-editorial" id="profile-card-3d">
-            <div class="profile-img-wrap">
-              <img src="assets/profile.jpg" alt="Aayush Gupta Portrait" class="profile-img"/>
+    <!-- Experience / Briefcase Icon -->
+    <a href="#experience" class="dock-item" data-tooltip="Experience" id="dock-exp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+    </a>
+
+    <!-- Projects / Layers Icon -->
+    <a href="#projects" class="dock-item" data-tooltip="Projects" id="dock-projects">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </svg>
+    </a>
+
+    <!-- Education / Qualifications Icon -->
+    <a href="#education" class="dock-item" data-tooltip="Education" id="dock-edu">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+    </a>
+
+    <!-- Contact / Settings Icon -->
+    <a href="#contact" class="dock-item" data-tooltip="Contact" id="dock-contact">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </a>
+
+    <div class="dock-divider"></div>
+
+    <!-- Theme Toggle Button (Dark / Light) -->
+    <button class="dock-item theme-toggle-btn" id="dock-theme-toggle" data-tooltip="Toggle Light / Dark" aria-label="Toggle Theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+
+    <!-- Reset / Top Button (like the circular undo arrow in screenshot) -->
+    <button class="dock-item" data-tooltip="Back to Top" id="dock-btn-reset" aria-label="Reset">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1 4 1 10 7 10"></polyline>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+      </svg>
+    </button>
+  </aside>
+
+  <!-- ░░ MAIN SITE WRAPPER ░░ -->
+  <div class="site-wrapper">
+
+
+
+    <!-- ░░ MASTER GLASS DASHBOARD WINDOW (Centerpiece) ░░ -->
+    <section id="home" class="dash-window fade-up">
+
+      <!-- Top Dashboard Header Bar -->
+      <div class="dash-topbar">
+        <div class="dash-title-group">
+          <h1>Portfolio Dashboard</h1>
+          <p>Aayush Gupta · Software Developer &amp; Data Analyst · MBA Student at IPS Business School</p>
+        </div>
+
+        <!-- 3 Glass Stat Pills -->
+        <div class="dash-top-metrics">
+          <div class="top-metric-pill">
+            <div class="tmp-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
-            <div class="profile-caption">Aayush Gupta · Software &amp; Data</div>
+            <div class="tmp-info">
+              <span class="tmp-label">Experience</span>
+              <span class="tmp-val">6 Mos Intern</span>
+            </div>
           </div>
-          <div class="profile-card-border"></div>
+
+          <div class="top-metric-pill">
+            <div class="tmp-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="tmp-info">
+              <span class="tmp-label">Technical Stack</span>
+              <span class="tmp-val">15+ Tech Skills</span>
+            </div>
+          </div>
+
+          <div class="top-metric-pill">
+            <div class="tmp-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <div class="tmp-info">
+              <span class="tmp-label">Academic Merit</span>
+              <span class="tmp-val">78.10% BCA · 95.20% 12th</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Scroll prompt -->
-    <div class="scroll-cue">
-      <div class="scroll-line"></div>
-      <span>SCROLL</span>
-    </div>
-  </section>
+      <!-- Main 2-Column Dashboard Grid -->
+      <div class="dash-layout-grid">
 
-  <!-- ░░ ABOUT ░░ -->
-  <section id="about" class="section about-sec">
-    <div class="container">
-      <div class="sec-head fade-up">
-        <span class="sec-tag">// About Me</span>
+        <!-- ░░ LEFT COLUMN: Statistic Chart & Goals ░░ -->
+        <div class="dash-left-col">
+
+          <!-- 1. "Statistic" Glass Panel -->
+          <div class="glass-panel stat-panel">
+            <div class="stat-panel-head">
+              <h2 class="stat-panel-title">Skill Trajectory</h2>
+              <button class="stat-filter-pill" id="btn-stat-filter">
+                <span>All Competencies</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </div>
+
+            <div class="stat-subhead-row">
+              <div class="stat-contributor-info">
+                <h3>Core Competencies</h3>
+                <p>Software Engineering, Data Analytics &amp; Performance Metrics</p>
+              </div>
+
+              <div class="stat-legend">
+                <div class="legend-item"><span class="legend-dot dot-cyan"></span> Python &amp; Analytics (85%)</div>
+                <div class="legend-item"><span class="legend-dot dot-green"></span> MySQL &amp; DBs (80%)</div>
+                <div class="legend-item"><span class="legend-dot dot-orange"></span> Web &amp; Testing (78%)</div>
+              </div>
+            </div>
+
+            <!-- Interactive SVG Wave Chart -->
+            <div class="chart-container" id="stat-chart-container">
+              <!-- Floating Tooltip Pill (Real data: 85% Python Mastery) -->
+              <div class="chart-tooltip-badge" id="chart-tooltip">
+                <span>85% Python Mastery</span>
+              </div>
+
+              <svg class="chart-svg" viewBox="0 0 540 180" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ff7a18"/>
+                    <stop offset="50%" stop-color="#ff9d3b"/>
+                    <stop offset="100%" stop-color="#ff5238"/>
+                  </linearGradient>
+                  <filter id="orangeGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- Subtle Grid Lines -->
+                <line x1="20" y1="40" x2="520" y2="40" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                <line x1="20" y1="90" x2="520" y2="90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                <line x1="20" y1="140" x2="520" y2="140" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+                <!-- Dotted White Curve (Secondary curve) -->
+                <path d="M 20 135 C 100 135, 140 150, 210 110 C 280 70, 360 85, 430 95 C 470 100, 500 120, 520 125" 
+                      fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-width="2" stroke-dasharray="4, 5"/>
+
+                <!-- Glowing Amber Main Curve -->
+                <path id="amber-curve" d="M 20 130 C 80 85, 140 70, 205 75 C 270 80, 320 130, 380 125 C 440 120, 480 80, 520 60" 
+                      fill="none" stroke="url(#curveGradient)" stroke-width="3.5" filter="url(#orangeGlow)"/>
+
+                <!-- Highlight Marker Points on Amber Curve -->
+                <circle cx="205" cy="75" r="5" fill="#ffffff" stroke="#ff7a18" stroke-width="3" filter="url(#orangeGlow)"/>
+                <circle cx="380" cy="125" r="4" fill="#ff7a18"/>
+                <circle cx="520" cy="60" r="4" fill="#ff9d3b"/>
+              </svg>
+
+              <!-- Real Tech Stack Labels across axis -->
+              <div class="chart-axis-labels">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+                <span>React</span>
+                <span>Jest</span>
+                <span>C++</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Lower Split Grid: "Key Goals" & "Academic Focus" -->
+          <div class="dash-subgrid">
+
+            <!-- "Key Goals" Glass Panel -->
+            <div class="glass-panel goals-panel">
+              <div class="goals-head">
+                <h3>Key Proficiencies</h3>
+              </div>
+              <div class="goals-cards-row">
+                <!-- Goal 1: 85% Python & Analytics -->
+                <div class="goal-card-item">
+                  <div class="goal-pct">85%</div>
+                  <div class="goal-track">
+                    <div class="goal-fill" style="width: 85%;"></div>
+                  </div>
+                  <div class="goal-label">Python &amp; Analytics</div>
+                </div>
+
+                <!-- Goal 2: 78% BCA Aggregate -->
+                <div class="goal-card-item">
+                  <div class="goal-pct">78%</div>
+                  <div class="goal-track">
+                    <div class="goal-fill" style="width: 78%;"></div>
+                  </div>
+                  <div class="goal-label">BCA Aggregate</div>
+                </div>
+
+                <!-- Circular Plus Action Button (links down to #skills) -->
+                <a href="#skills" class="goal-add-btn" title="View All 15 Skills" id="btn-add-goal">+</a>
+              </div>
+            </div>
+
+            <!-- "Academic Focus" Glass Panel -->
+            <div class="glass-panel biz-panel">
+              <div class="biz-head">
+                <h3>Academic Track</h3>
+              </div>
+              <div class="biz-content">
+                <div class="biz-metrics-list">
+                  <div class="biz-stat-item">
+                    <span class="bs-label">Degree Enrolled</span>
+                    <div class="bs-val-wrap">
+                      <span class="bs-tag">MBA (2026–Present)</span>
+                    </div>
+                  </div>
+
+                  <div class="biz-stat-item">
+                    <span class="bs-label">Undergraduate</span>
+                    <div class="bs-val-wrap">
+                      <span class="bs-val">BCA 78.10%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Radial Progress Donut (78% BCA aggregate score) -->
+                <div class="radial-gauge-wrap">
+                  <svg class="radial-gauge-svg" viewBox="0 0 80 80">
+                    <circle class="radial-bg" cx="40" cy="40" r="34"></circle>
+                    <circle class="radial-progress" cx="40" cy="40" r="34" style="stroke-dashoffset: 48;"></circle>
+                  </svg>
+                  <div class="radial-center-text">78%</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ░░ RIGHT COLUMN: Profile, Dev Pass Card & Work Milestones ░░ -->
+        <div class="dash-right-col">
+
+          <!-- 1. Profile & Quick Actions Panel -->
+          <div class="glass-panel profile-panel">
+            <div class="profile-panel-top-tools">
+              <a href="#contact" class="tool-icon-btn" title="Available for Work" id="btn-profile-notif">
+                <span class="bell-badge-dot"></span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </a>
+              <a href="#about" class="tool-icon-btn" title="View Full Bio" id="btn-profile-opts">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+              </a>
+            </div>
+
+            <!-- Profile Avatar & Real User Identity -->
+            <div class="profile-avatar-box">
+              <img src="assets/profile.jpg" alt="Aayush Gupta Portrait" class="profile-avatar-img"/>
+            </div>
+            <span class="profile-exclusive-tag">Available For Work</span>
+            <h3 class="profile-user-name">Aayush Gupta</h3>
+            <p class="profile-user-role">Software Developer &amp; Data Analyst</p>
+
+            <!-- 4 Quick Action Buttons -->
+            <div class="profile-actions-grid">
+              <a href="#projects" class="action-pill-btn" title="View Projects">
+                <div class="action-icon-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <span class="action-label">Projects</span>
+              </a>
+
+              <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="action-pill-btn" title="GitHub Profile">
+                <div class="action-icon-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <span class="action-label">GitHub</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank" rel="noopener" class="action-pill-btn" title="LinkedIn Profile">
+                <div class="action-icon-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <span class="action-label">LinkedIn</span>
+              </a>
+
+              <a href="#contact" class="action-pill-btn" title="Contact Me">
+                <div class="action-icon-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <span class="action-label">Contact</span>
+              </a>
+            </div>
+
+            <!-- ── THE SUNSET GRADIENT DEV PASS CARD (With Aayush Gupta's Real Data) ── -->
+            <div class="card-stack-wrapper" id="sunset-card-container">
+              <div class="card-underlay layer-2"></div>
+              <div class="card-underlay layer-1"></div>
+              <div class="sunset-visa-card" id="sunset-card">
+                <div class="visa-top-row">
+                  <span class="visa-holder-name">Aayush Gupta</span>
+                  <span class="visa-logo-text">DEV PASS</span>
+                </div>
+                <div class="visa-bottom-row">
+                  <div class="visa-expiry-group">
+                    <span class="ve-label">Valid Thru</span>
+                    <span class="ve-val">2026–Present</span>
+                  </div>
+                  <div class="visa-balance-group">
+                    <span class="vb-label">BCA Aggregate</span>
+                    <span class="vb-val">78.10%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 2. Work & Experience Milestones Panel -->
+          <div class="glass-panel tx-panel">
+            <div class="tx-panel-head">
+              <h3>Work Milestones</h3>
+            </div>
+
+            <div class="tx-items-list">
+              <!-- Item 1: Tech Organization Software Dev Intern -->
+              <div class="tx-row-item">
+                <div class="tx-left">
+                  <div class="tx-avatar">TO</div>
+                  <div class="tx-details">
+                    <span class="tx-name">Tech Organization</span>
+                    <span class="tx-date">Nov 2025 – Apr 2026</span>
+                  </div>
+                </div>
+                <span class="tx-badge">6 Mos Intern</span>
+              </div>
+
+              <!-- Item 2: Celebal Technologies SQL Internship -->
+              <div class="tx-row-item">
+                <div class="tx-left">
+                  <div class="tx-avatar">CT</div>
+                  <div class="tx-details">
+                    <span class="tx-name">Celebal Tech</span>
+                    <span class="tx-date">SQL Internship</span>
+                  </div>
+                </div>
+                <span class="tx-badge">Verified</span>
+              </div>
+
+              <!-- Item 3: YBI Foundation -->
+              <div class="tx-row-item">
+                <div class="tx-left">
+                  <div class="tx-avatar">YBI</div>
+                  <div class="tx-details">
+                    <span class="tx-name">YBI Foundation</span>
+                    <span class="tx-date">AI &amp; Data Skills</span>
+                  </div>
+                </div>
+                <span class="tx-badge">Certified</span>
+              </div>
+            </div>
+
+            <!-- "See all work history" footer link -->
+            <a href="#experience" class="tx-view-all-link">
+              <span>View full work history</span>
+              <span>➔</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ░░ SECTION 1: ABOUT ME (Luxury Glassmorphism Card) ░░ -->
+    <section id="about" class="portfolio-section fade-up">
+      <div class="sec-head">
+        <span class="sec-tag">// Profile Overview</span>
         <h2 class="sec-h2">Who I <em>Am</em></h2>
       </div>
+
       <div class="about-grid">
-        <!-- Profile Frame -->
-        <div class="about-img-frame fade-up">
+        <!-- Photo Frame -->
+        <div class="about-img-frame">
           <div class="about-img-inner">
-            <img src="assets/profile.jpg" alt="Aayush Gupta" class="about-img"/>
+            <img src="assets/profile.jpg" alt="Aayush Gupta Portrait" class="about-img"/>
           </div>
-          <div class="about-card-info">
-            <span class="aci-name">Aayush Gupta</span>
-            <span class="aci-role">Software Developer &amp; Data Analyst</span>
-          </div>
+          <span class="aci-name">Aayush Gupta</span>
+          <span class="aci-role">Software Developer &amp; Data Analyst</span>
         </div>
 
-        <div class="about-text fade-up delay-2">
+        <!-- Bio Content -->
+        <div class="about-text">
           <p class="about-lead">
-            I'm an <span class="hl">MBA student at IPS Business School</span> with a BCA background in Computer Applications and practical experience in software development and data analysis.
+            I'm an <span class="hl">MBA student at IPS Business School</span> with a solid BCA foundation in Computer Applications and practical industry experience in software engineering and data analytics.
           </p>
           <p class="about-body">
-            Skilled in Python, SQL, and Power BI, with a strong interest in using data to understand problems and find meaningful insights. Completed a <span class="hl">6-month Software Developer Internship</span> (Nov 2025 – Apr 2026), contributing to testing, debugging, and improving web application performance. A quick learner with strong analytical and problem-solving abilities.
+            Skilled in Python, SQL, Power BI, and modern web architectures. Completed a <span class="hl">6-month Software Developer Internship</span> (Nov 2025 – Apr 2026), focusing on unit testing with Jest, debugging APIs, and optimizing web application reliability.
           </p>
+
           <div class="about-tags">
-            <span class="atag">Software Dev</span>
+            <span class="atag">Software Development</span>
             <span class="atag">Data Analytics</span>
-            <span class="atag">Problem Solving</span>
             <span class="atag">Python</span>
+            <span class="atag">SQL &amp; MySQL</span>
             <span class="atag">Power BI</span>
-            <span class="atag">MBA</span>
+            <span class="atag">MBA Student</span>
           </div>
-          <div class="about-info">
-            <div class="ai-row"><span class="ai-k">Email</span><a href="mailto:ayushh.7229@gmail.com" class="ai-v">ayushh.7229@gmail.com</a></div>
-            <div class="ai-row"><span class="ai-k">Phone</span><span class="ai-v">+91 7229968803</span></div>
-            <div class="ai-row"><span class="ai-k">Degree</span><span class="ai-v">MBA (2026–Present) · BCA (2022–2025)</span></div>
-            <div class="ai-row"><span class="ai-k">Experience</span><span class="ai-v">6 Months Intern</span></div>
+
+          <div class="about-info-grid">
+            <div class="ai-row">
+              <span class="ai-k">Email</span>
+              <span class="ai-v"><a href="mailto:ayushh.7229@gmail.com">ayushh.7229@gmail.com</a></span>
+            </div>
+            <div class="ai-row">
+              <span class="ai-k">Phone</span>
+              <span class="ai-v">+91 7229968803</span>
+            </div>
+            <div class="ai-row">
+              <span class="ai-k">Degree</span>
+              <span class="ai-v">MBA (2026–Present) · BCA (78.1%)</span>
+            </div>
+            <div class="ai-row">
+              <span class="ai-k">Availability</span>
+              <span class="ai-v">Open for Full-time &amp; Intern Roles</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ░░ SKILLS ░░ -->
-  <section id="skills" class="section skills-sec">
-    <div class="container">
-      <div class="sec-head fade-up">
-        <span class="sec-tag">// Skills Inventory</span>
+
+    <!-- ░░ SECTION 2: TECHNICAL STACK & SKILLS ░░ -->
+    <section id="skills" class="portfolio-section fade-up">
+      <div class="sec-head">
+        <span class="sec-tag">// Core Competencies</span>
         <h2 class="sec-h2">Technical <em>Stack</em></h2>
       </div>
 
-      <!-- Clean Category-based Skill Showcase -->
       <div class="skills-grid">
-        <!-- Languages & Core -->
-        <div class="skills-column fade-up">
+        <!-- Column 1: Programming Languages -->
+        <div class="skills-column">
           <h3 class="skills-col-title">Programming Languages</h3>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>Python</span>
-              <span>85%</span>
-            </div>
+            <div class="skill-info"><span>Python</span><span>85%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>C</span>
-              <span>75%</span>
-            </div>
+            <div class="skill-info"><span>C</span><span>75%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>C++</span>
-              <span>72%</span>
-            </div>
+            <div class="skill-info"><span>C++</span><span>72%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="72"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>HTML5 / CSS3 / JavaScript</span>
-              <span>78%</span>
-            </div>
+            <div class="skill-info"><span>HTML5 / CSS3 / JavaScript</span><span>78%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="78"></div></div>
           </div>
         </div>
 
-        <!-- Databases & Frameworks -->
-        <div class="skills-column fade-up delay-1">
+        <!-- Column 2: Databases & Frameworks -->
+        <div class="skills-column">
           <h3 class="skills-col-title">Databases &amp; Frameworks</h3>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>MySQL</span>
-              <span>80%</span>
-            </div>
+            <div class="skill-info"><span>MySQL</span><span>80%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>MongoDB</span>
-              <span>72%</span>
-            </div>
+            <div class="skill-info"><span>MongoDB</span><span>72%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="72"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>React JS</span>
-              <span>65%</span>
-            </div>
+            <div class="skill-info"><span>React JS</span><span>65%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>Jest &amp; Unit Testing</span>
-              <span>75%</span>
-            </div>
+            <div class="skill-info"><span>Jest &amp; Unit Testing</span><span>75%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
           </div>
         </div>
 
-        <!-- Analytics & Tools -->
-        <div class="skills-column fade-up delay-2">
+        <!-- Column 3: Analytics & Tools -->
+        <div class="skills-column">
           <h3 class="skills-col-title">Analytics &amp; Tools</h3>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>Power BI &amp; Data Visualization</span>
-              <span>75%</span>
-            </div>
+            <div class="skill-info"><span>Power BI &amp; Data Visualization</span><span>75%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>Basic Statistics</span>
-              <span>78%</span>
-            </div>
+            <div class="skill-info"><span>Basic Statistics</span><span>78%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="78"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>GitHub</span>
-              <span>82%</span>
-            </div>
+            <div class="skill-info"><span>GitHub &amp; Git Version Control</span><span>82%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="82"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-info">
-              <span>Jupyter Notebook &amp; Ms Excel</span>
-              <span>80%</span>
-            </div>
+            <div class="skill-info"><span>Jupyter Notebook &amp; MS Excel</span><span>80%</span></div>
             <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ░░ EXPERIENCE ░░ -->
-  <section id="experience" class="section exp-sec">
-    <div class="container">
-      <div class="sec-head fade-up">
-        <span class="sec-tag">// Experience</span>
+
+    <!-- ░░ SECTION 3: WORK HISTORY ░░ -->
+    <section id="experience" class="portfolio-section fade-up">
+      <div class="sec-head">
+        <span class="sec-tag">// Practical Experience</span>
         <h2 class="sec-h2">Work <em>History</em></h2>
       </div>
-      
-      <div class="experience-wrap fade-up">
+
+      <div class="experience-wrap">
         <div class="exp-item">
           <div class="exp-meta">
             <span class="exp-duration">Nov 2025 — Apr 2026</span>
@@ -298,103 +608,95 @@
             <h3 class="exp-title">Software Developer Intern</h3>
             <h4 class="exp-company">Tech Organization</h4>
             <p class="exp-desc">
-              Assisting in development and testing of web-based software applications, working with cross-functional teams to deliver quality solutions and maintain performance benchmarks.
+              Assisted in the design, development, and automated testing of web applications, working with cross-functional teams to resolve issues, write unit tests, and improve performance.
             </p>
             <ul class="exp-bullets">
-              <li>Assisting in development and testing of web-based software applications.</li>
-              <li>Writing unit tests using <strong>Jest</strong> to improve code quality and reliability.</li>
-              <li>Debugging backend services and analyzing API responses and logs.</li>
-              <li>Collaborating with developers to identify bugs and optimize application performance.</li>
-              <li>Maintaining documentation and assisting in test coverage improvements.</li>
-              <li>Working with Git-based workflows for version control and collaboration.</li>
+              <li>Engineered unit test suites using <strong>Jest</strong> to bolster application stability.</li>
+              <li>Debugged backend endpoints and streamlined API log analysis.</li>
+              <li>Collaborated with agile engineering squads on Git workflows and pull requests.</li>
+              <li>Refactored legacy routines to improve response speed and maintainability.</li>
             </ul>
             <div class="exp-tech">
-              <span>Jest</span><span>Git</span><span>APIs</span><span>React.js</span><span>JavaScript</span><span>Node.js</span>
+              <span>Jest</span><span>React.js</span><span>JavaScript</span><span>REST APIs</span><span>Node.js</span><span>Git</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ░░ PROJECTS ░░ -->
-  <section id="projects" class="section proj-sec">
-    <div class="container">
-      <div class="sec-head fade-up">
-        <span class="sec-tag">// Projects</span>
+
+    <!-- ░░ SECTION 4: SELECTED PROJECTS ░░ -->
+    <section id="projects" class="portfolio-section fade-up">
+      <div class="sec-head">
+        <span class="sec-tag">// Featured Builds</span>
         <h2 class="sec-h2">Selected <em>Work</em></h2>
       </div>
 
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card fade-up">
+        <div class="project-card">
           <div class="project-header">
             <span class="project-number">01</span>
             <h3 class="project-title">Quiz Management System</h3>
           </div>
-          <p class="project-description">A complete responsive quiz engine offering dynamic questions loading, scoring analysis, and visual results summaries.</p>
+          <p class="project-description">A responsive and modular quiz platform with dynamic question generation, instant grading logic, and performance metrics.</p>
           <ul class="project-bullets">
-            <li>Dynamic quiz questions and scoring logic</li>
-            <li>User-friendly navigation &amp; result tracking</li>
-            <li>Efficient question management structure</li>
+            <li>Dynamic question rendering and timed response tracking</li>
+            <li>Real-time scoring breakdown with score distribution metrics</li>
+            <li>Responsive UI optimized for desktop and mobile devices</li>
           </ul>
           <div class="project-tags">
-            <span>JavaScript</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
+            <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>DOM Logic</span>
           </div>
           <div class="project-footer">
             <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="project-link">
-              View Code <span>→</span>
+              View Source ➔
             </a>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card featured fade-up delay-2">
+        <!-- Project 2 (Featured) -->
+        <div class="project-card">
           <div class="project-header">
             <span class="project-number">02</span>
             <span class="project-badge">Featured</span>
             <h3 class="project-title">HR Analytics Dashboard</h3>
           </div>
-          <p class="project-description">Interactive enterprise intelligence report tracking human resources metrics, employee retention curves, and operational KPIs.</p>
+          <p class="project-description">Comprehensive enterprise business intelligence dashboard built in Power BI to monitor attrition trends, headcount distributions, and employee satisfaction.</p>
           <ul class="project-bullets">
-            <li>Integrated multi-source data for unified analysis</li>
-            <li>Power Query data cleaning &amp; transformation</li>
-            <li>Dynamic KPI visualizations for decision-making</li>
+            <li>Consolidated multi-table datasets using automated Power Query transformations</li>
+            <li>Designed DAX measure calculations for attrition rate and retention curves</li>
+            <li>Interactive drill-through slicers enabling rapid executive decision-making</li>
           </ul>
           <div class="project-tags">
-            <span>Power BI</span>
-            <span>Power Query</span>
-            <span>DAX</span>
+            <span>Power BI</span><span>DAX</span><span>Power Query</span><span>Data Modeling</span>
           </div>
           <div class="project-footer">
             <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="project-link">
-              View Dashboard <span>→</span>
+              View Analytics ➔
             </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ░░ EDUCATION ░░ -->
-  <section id="education" class="section edu-sec">
-    <div class="container">
-      <div class="sec-head fade-up">
+
+    <!-- ░░ SECTION 5: EDUCATION & CERTIFICATIONS ░░ -->
+    <section id="education" class="portfolio-section fade-up">
+      <div class="sec-head">
         <span class="sec-tag">// Qualifications</span>
         <h2 class="sec-h2">Education &amp; <em>Certs</em></h2>
       </div>
-      
+
       <div class="edu-grid">
         <!-- Education Timeline -->
-        <div class="edu-timeline fade-up">
-          <h3 class="edu-section-title">Education</h3>
+        <div class="edu-timeline">
+          <h3 class="edu-section-title">Academic Background</h3>
 
           <div class="edu-item">
             <span class="edu-year">2026–</span>
             <div class="edu-details">
-              <h4>Master of Business Administration</h4>
+              <h4>Master of Business Administration (MBA)</h4>
               <span class="edu-school">IPS Business School</span>
               <span class="edu-grade">Currently Enrolled</span>
             </div>
@@ -403,7 +705,7 @@
           <div class="edu-item">
             <span class="edu-year">2025</span>
             <div class="edu-details">
-              <h4>Bachelor of Computer Applications</h4>
+              <h4>Bachelor of Computer Applications (BCA)</h4>
               <span class="edu-school">Maharishi Arvind Institute Of Science And Management</span>
               <span class="edu-grade">Aggregate: 78.10%</span>
             </div>
@@ -412,7 +714,7 @@
           <div class="edu-item">
             <span class="edu-year">2021</span>
             <div class="edu-details">
-              <h4>Class 12th (RBSE)</h4>
+              <h4>Class 12th (Senior Secondary — RBSE)</h4>
               <span class="edu-school">N.K. Public School</span>
               <span class="edu-grade">Percentage: 95.20%</span>
             </div>
@@ -421,7 +723,7 @@
           <div class="edu-item">
             <span class="edu-year">2019</span>
             <div class="edu-details">
-              <h4>Class 10th (RBSE)</h4>
+              <h4>Class 10th (Secondary — RBSE)</h4>
               <span class="edu-school">Red Rose English School</span>
               <span class="edu-grade">Percentage: 82.00%</span>
             </div>
@@ -429,12 +731,12 @@
         </div>
 
         <!-- Certifications -->
-        <div class="certs-list fade-up delay-1">
-          <h3 class="edu-section-title">Certifications</h3>
-          
+        <div class="certs-list">
+          <h3 class="edu-section-title">Certifications &amp; Training</h3>
+
           <div class="cert-item">
             <div class="cert-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
             <div class="cert-info">
               <h4>SQL Internship</h4>
@@ -444,7 +746,7 @@
 
           <div class="cert-item">
             <div class="cert-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
             <div class="cert-info">
               <h4>AI and Data Skills</h4>
@@ -453,53 +755,55 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ░░ CONTACT ░░ -->
-  <section id="contact" class="section contact-sec">
-    <div class="container">
-      <div class="sec-head fade-up">
+
+    <!-- ░░ SECTION 6: CONTACT & GET IN TOUCH ░░ -->
+    <section id="contact" class="portfolio-section fade-up">
+      <div class="sec-head">
         <span class="sec-tag">// Connections</span>
         <h2 class="sec-h2">Get In <em>Touch</em></h2>
       </div>
-      
+
       <div class="contact-grid">
-        <div class="contact-left fade-up">
-          <p class="contact-lead">Open to full-time roles, internships, freelance projects, and collaborations. Let's discuss how we can work together.</p>
-          <a href="mailto:ayushh.7229@gmail.com" class="contact-large-link" id="contact-email-3d">
-            <span class="cl-label">Write me an email</span>
+        <div class="contact-left">
+          <p class="contact-lead">
+            Open to full-time developer positions, data analyst roles, internships, and high-impact freelance projects. Let's build something exceptional together.
+          </p>
+          <a href="mailto:ayushh.7229@gmail.com" class="contact-large-link" id="contact-email-link">
+            <span class="cl-label">Send Direct Message</span>
             <span class="cl-email">ayushh.7229@gmail.com</span>
-            <span class="cl-arrow">→</span>
+            <span class="cl-arrow">➔</span>
           </a>
         </div>
-        <div class="contact-right fade-up delay-1">
+
+        <div class="contact-right">
           <div class="contact-links-grid">
-            <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank" rel="noopener" class="contact-card" id="cc-linkedin">
+            <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank" rel="noopener" class="contact-card">
               <div class="cc-details">
                 <span class="cc-name">LinkedIn</span>
                 <span class="cc-handle">aayush-gupta</span>
               </div>
               <span class="cc-link-icon">↗</span>
             </a>
-            
-            <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="contact-card" id="cc-github">
+
+            <a href="https://github.com/ayuusshhhh7-code" target="_blank" rel="noopener" class="contact-card">
               <div class="cc-details">
                 <span class="cc-name">GitHub</span>
                 <span class="cc-handle">ayuusshhhh7-code</span>
               </div>
               <span class="cc-link-icon">↗</span>
             </a>
-            
-            <a href="mailto:ayushh.7229@gmail.com" class="contact-card" id="cc-email">
+
+            <a href="mailto:ayushh.7229@gmail.com" class="contact-card">
               <div class="cc-details">
                 <span class="cc-name">Email</span>
-                <span class="cc-handle">ayushh.7229@gmail.com</span>
+                <span class="cc-handle">ayushh.7229@...</span>
               </div>
               <span class="cc-link-icon">↗</span>
             </a>
-            
-            <a href="tel:+917229968803" class="contact-card" id="cc-phone">
+
+            <a href="tel:+917229968803" class="contact-card">
               <div class="cc-details">
                 <span class="cc-name">Phone</span>
                 <span class="cc-handle">+91 7229968803</span>
@@ -509,25 +813,27 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <span>Aayush Gupta</span>
-      </div>
-      <p class="footer-copy">© <span id="yr"></span> · Crafted with care &amp; Three.js</p>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank">LinkedIn</a>
-        <a href="https://github.com/ayuusshhhh7-code" target="_blank">GitHub</a>
-        <a href="mailto:ayushh.7229@gmail.com">Email</a>
-      </div>
-    </div>
-  </footer>
 
-  <!-- THREE.JS -->
+    <!-- ░░ FOOTER ░░ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span>Aayush Gupta</span>
+        </div>
+        <p class="footer-copy">© <span id="yr"></span> · Frosted Glassmorphism Portfolio &amp; Three.js</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/aayush-gupta-606572283" target="_blank">LinkedIn</a>
+          <a href="https://github.com/ayuusshhhh7-code" target="_blank">GitHub</a>
+          <a href="mailto:ayushh.7229@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Three.js Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
 </body>
